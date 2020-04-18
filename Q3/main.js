@@ -2,14 +2,11 @@
 
 let button = document.querySelector("button");
 
-let catsJson = fetch("https://jessicagilfillan.github.io/Final_Exam_Prep/Q3/cats.json ")
+function getCatData() {
+  fetch("https://jessicagilfillan.github.io/Final_Exam_Prep/Q3/cats.json ")
 .then(function(response) {
   return response.json();
-});
-
-button.onclick = displayCats;
-
-  function displayCats(jsonObj) {
+}).then(function displayCats(jsonObj) {
     let cats = jsonObj.cats;
 
     for (let i = 0; i < cats.length; i++) {
@@ -34,4 +31,9 @@ button.onclick = displayCats;
       article.appendChild(p3);
       section.appendChild(article);
     }
-};
+  }).catch(function(e) {
+    console.log(e);
+  });
+}
+
+button.onclick = getCatData;
