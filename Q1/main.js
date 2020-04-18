@@ -1,7 +1,7 @@
 // JavaScript Document
 
 let main = document.querySelector("main");
-let submitButton = document.getElementById("submit");
+let submitButton = document.querySelectorAll("input")[1];
 let body = document.querySelector("body");
 
 submitButton.addEventListener("click", function(e) {
@@ -13,3 +13,4 @@ submitButton.addEventListener("click", function(e) {
   body.setAttribute("class", "meow");
   console.log("=^..^=");
 });
+
